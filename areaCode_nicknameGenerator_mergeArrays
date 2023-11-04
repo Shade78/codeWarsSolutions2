@@ -1,0 +1,34 @@
+//#1
+
+function areaCode(text) {
+//   const ar = text.split('(')  
+//   const result = ar[1].split(')')   
+//   return result[0];
+  return text.split("(")[1].split(')')[0]
+}
+
+//Or
+function areaCode(text) {
+  return text.slice(text.indexOf("(") + 1, text.indexOf(')'))
+}
+
+//#2
+
+function nicknameGenerator(name) {
+  return name.length > 3 
+    ? name.slice(0, 3 + "aeiou".includes(name[2]))
+    : 'Error: Name too short'
+}
+
+//#3
+
+function mergeArrays(a, b) {
+  const concatAr = Array.from(new Set([...a, ...b])).sort((a,b) => a - b)  
+  
+  return concatAr                       
+}
+
+//Or
+function mergeArrays(a, b) {
+  return [...new Set([...a, ...b])].sort((a,b) => a - b)
+}
